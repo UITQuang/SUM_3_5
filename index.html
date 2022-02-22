@@ -1,0 +1,42 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <input type="text" class="input_screen" id="input_screen">
+    <button class="result" onclick="result()">Submit</button>
+    <input type="text" class="output_screen" id="output_screen" readonly="">
+
+
+
+</body>
+<script>
+    var input_screen = document.getElementById("input_screen");
+    var output_screen = document.getElementById("output_screen");
+
+
+
+    function result() {
+        var sum = 0;
+        var int_3 = Math.floor(input_screen.value / 3);
+        var int_5 = Math.floor(input_screen.value / 5);
+        var int_15 = Math.floor(input_screen.value / 15);
+        var num = input_screen.value;
+        if (num < 3) output_screen.value = 0;
+        for (var i = 1; i <= int_3; i++)
+            sum = sum + 3 * i;
+        for (var i = 1; i <= int_5; i++)
+            sum = sum + 5 * i;
+        for (var i = 1; i <= int_15; i++)
+            sum = sum - 15 * i;
+
+        output_screen.value = sum;
+
+    }
+</script>
+
+</html>
